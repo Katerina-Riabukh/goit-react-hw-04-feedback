@@ -16,53 +16,53 @@ export const Feedback = () => {
 
 
 
-    handleClickFeedback = (option) => {
+    // handleClickFeedback = (option) => {
 
-        this.setState((prevState) => ({ [option]: prevState[option] + 1 }));
+    //     this.setState((prevState) => ({ [option]: prevState[option] + 1 }));
 
-    };
-
-
-    countTotalFeedback = () => {
-
-        return Object.values(this.state).reduce((total, value) => total += value, 0);
-    };
-
-    countPositiveFeedbackPercentage = (goodValue, total) => {
-
-        return goodValue === 0 ? 0 : Math.round(((100 * goodValue) / total));
-    };
+    // };
 
 
+    // countTotalFeedback = () => {
+
+    //     return Object.values(this.state).reduce((total, value) => total += value, 0);
+    // };
+
+    // countPositiveFeedbackPercentage = (goodValue, total) => {
+
+    //     return goodValue === 0 ? 0 : Math.round(((100 * goodValue) / total));
+    // };
 
 
 
-    const total = this.countTotalFeedback();
-    const positiveFeedback = this.countPositiveFeedbackPercentage(this.state.good, total);
 
 
-    return (
+    // const total = this.countTotalFeedback();
+    // const positiveFeedback = this.countPositiveFeedbackPercentage(this.state.good, total);
 
-        <div>
-            <Section title='Pleas leave feedback'>
-                <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleClickFeedback} />
-            </Section>
 
-            <Section title='Statistics'>
-                {total === 0 ? (
-                    <Notification message={"There is no feedback yet..."} />
-                ) : (
-                    <Statistics good={this.state.good}
-                        neutral={this.state.neutral}
-                        bad={this.state.bad}
-                        total={total}
-                        positiveFeedback={positiveFeedback} />
-                )}
-            </Section>
+    // return (
 
-        </div>
+    //     <div>
+    //         <Section title='Pleas leave feedback'>
+    //             <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleClickFeedback} />
+    //         </Section>
 
-    )
+    //         <Section title='Statistics'>
+    //             {total === 0 ? (
+    //                 <Notification message={"There is no feedback yet..."} />
+    //             ) : (
+    //                 <Statistics good={this.state.good}
+    //                     neutral={this.state.neutral}
+    //                     bad={this.state.bad}
+    //                     total={total}
+    //                     positiveFeedback={positiveFeedback} />
+    //             )}
+    //         </Section>
+
+    //     </div>
+
+    // )
 
 };
 
