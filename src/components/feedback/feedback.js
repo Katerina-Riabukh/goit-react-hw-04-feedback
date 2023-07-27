@@ -14,7 +14,6 @@ export const Feedback = () => {
 
 
     const handleClickFeedback = (key) => {
-        console.log(key);
 
         switch (key) {
             case 'good':
@@ -46,7 +45,6 @@ export const Feedback = () => {
     const total = countTotalFeedback();
     const positiveFeedback = countPositiveFeedbackPercentage(good, total);
 
-    console.log(good);
 
     return (
 
