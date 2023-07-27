@@ -12,16 +12,18 @@ export const Feedback = () => {
 
     const state = [good, neutral, bad];
 
+
     const handleClickFeedback = (key) => {
+        console.log(key);
 
         switch (key) {
-            case good:
+            case 'good':
                 setGood(prevState => prevState + 1)
                 break;
-            case neutral:
+            case 'neutral':
                 setNeutral(prevState => prevState + 1)
                 break;
-            case bad:
+            case 'bad':
                 setBad(prevState => prevState + 1)
                 break;
 
@@ -44,12 +46,14 @@ export const Feedback = () => {
     const total = countTotalFeedback();
     const positiveFeedback = countPositiveFeedbackPercentage(good, total);
 
+    console.log(good);
 
     return (
 
         <div>
             <Section title='Pleas leave feedback'>
-                <FeedbackOptions options={[{ 'good': good }, { 'neutral': neutral }, { 'bad': bad }]} onLeaveFeedback={handleClickFeedback} />
+                {/* <FeedbackOptions options={[{ 'good': good }, { 'neutral': neutral }, { 'bad': bad }]} onLeaveFeedback={handleClickFeedback} /> */}
+                <FeedbackOptions options={['good', 'neutral', 'bad']} onLeaveFeedback={handleClickFeedback} />
             </Section>
 
             <Section title='Statistics'>
